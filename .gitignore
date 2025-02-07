@@ -1,0 +1,21 @@
+# Ignore environment files
+.env
+__pycache__/
+db.sqlite3  # Ignore SQLite database if using it
+
+# Ignore Python cache
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore compiled cache
+__pycache__/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore migrations (optional)
+*/migrations/*
+
+# Ignore node_modules (if applicable)
+node_modules/
