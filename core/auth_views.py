@@ -4,6 +4,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
+
+
 
 # Custom login view (extends JWT login)
 class CustomTokenObtainPairView(TokenObtainPairView):
@@ -22,3 +26,7 @@ def register_user(request):
         return Response({"message": f"User {user.username} registered successfully"}, status=status.HTTP_201_CREATED)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def protected_view(request):
+    return Response({"message": "You have accessed a protected endpoint!"})

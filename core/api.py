@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Category, Product
-from .serializers import CategorySerializer, ProductSerializer
+from .models import Category, Product, Cart
+from .serializers import CategorySerializer, CartSerializer, ProductSerializer
 
 # API View for Categories
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -11,4 +11,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()  # ✅ Fetches all products
     serializer_class = ProductSerializer  # ✅ Uses ProductSerializer
- 
+
+class CartViewSet(viewsets.ModelViewSet):
+    queryset = Cart.objects.all()
+    serializer_class = CartSerializer
