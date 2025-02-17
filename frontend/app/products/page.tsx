@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// ✅ Define the product type
+
 interface Product {
   id: number;
   name: string;
@@ -10,7 +10,7 @@ interface Product {
 }
 
 export default function ProductsPage() {
-  // ✅ Use the defined type in state
+
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
