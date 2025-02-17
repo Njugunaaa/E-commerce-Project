@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
 
-// ✅ Define Product Type
 interface Product {
   id: number;
   name: string;
@@ -12,7 +11,6 @@ interface Product {
 }
 
 export default function ProductDetailsPage() {
-  // ✅ Get product ID from the URL
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
 
