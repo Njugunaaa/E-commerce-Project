@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_API_URL: "http://127.0.0.1:8000/api", // Backend URL
+  },
 };
 
 export default nextConfig;
